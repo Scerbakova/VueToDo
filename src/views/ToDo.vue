@@ -1,19 +1,7 @@
 <template>
   <div class="todo">
-    <form @submit.prevent>
-      <div>
-        <input
-          @input="todo = $event.target.value"
-          :value="todo"
-          type="text"
-          placeholder="Add new task..."
-        />
-        <button @click="addToDo()">ADD</button>
-      </div>
-    </form>
-    <div :key="todo.id" v-for="todo in todoes">
-      <div>{{ todo.todo }}</div>
-    </div>
+    <ToDoForm @add="addToDo" />
+    <ToDoList :todoes="todoes" />
     <div>
       <button>All</button>
       <button>In progress</button>
@@ -24,8 +12,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import ToDoForm from "@/components/ToDoForm.vue";
+import ToDoList from "@/components/ToDoList.vue";
 
 export default defineComponent({
+  components: {
+    ToDoForm,
+    ToDoList,
+  },
   name: "ToDo",
   data() {
     return {
@@ -35,17 +29,11 @@ export default defineComponent({
           todo: "",
         },
       ],
-      todo: "",
     };
   },
   methods: {
-    addToDo() {
-      const newtodo = {
-        id: Date.now(),
-        todo: this.todo,
-      };
-      this.todoes.push(newtodo);
-      this.todo = "";
+    addToDo(todo: { id: number; todo: string }) {
+      this.todoes.push(todo);
     },
   },
 });
