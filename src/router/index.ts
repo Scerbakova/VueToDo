@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import ToDo from "../views/ToDo.vue";
+import servicesTask from "../views/servicesTask.vue";
+import PlannerTask from "../views/PlannerTask.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,11 +12,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/services",
     name: "services",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/ToDo.vue"),
+    component: servicesTask,
+  },
+  {
+    path: "/planner",
+    name: "planner",
+    component: PlannerTask,
   },
 ];
 

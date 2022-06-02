@@ -1,0 +1,61 @@
+.planner__wrapper {
+  max-width: fit-content;
+  max-height: fit-content;
+  background-color: rgb(131, 194, 155);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 2px 2px 3px black;
+  border-radius: 12px;
+}
+.title {
+  align-self: center;
+  font-style: italic;
+  font-size: 60px;
+  padding: 0 0 20px;
+  text-shadow: 2px 2px 5px black;
+  color: rgb(245, 187, 29);
+}
+.todo-input {
+  background-color: rgb(29, 36, 36);
+  border-radius: 6px;
+  border: none;
+  color: inherit;
+}
+.btn {
+  background-color: rgb(138, 69, 106);
+  border: none;
+  border-radius: 12px;
+  margin-left: 20px;
+  color: inherit;
+  text-shadow: 2px 2px 2px black;
+  padding: 3px 10px
+}
+.isdone {
+  text-decoration: line-through;
+}
+.one__task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 30px
+}
+.checkbox {
+  width: 30px;
+  height: 30px;
+  accent-color: rgb(138, 69, 106);
+  margin-right: 20px;
+}
+.filters {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.btn__all {
+  background-color: rgb(58, 54, 117);
+}
+.btn__progress {
+  background-color: rgb(99, 36, 44);
+}
+.btn__completed {
+  background-color: rgb(45, 92, 45);
+}

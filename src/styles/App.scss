@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.app__wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(33, 65, 38);
+  font-family: "Gentium Plus", serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: wheat;
+}
+.navigation__bar {
+  margin-top: 20px;
+}
+.router-link-active,
+.router-link-exact-active {
+  text-shadow: 2px 2px black;
+  color: antiquewhite;
+  font-style: italic;
+}
+.link:hover {
+  color: antiquewhite;
+}
