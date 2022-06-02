@@ -18,14 +18,17 @@
 }
 .service, .total {
   border-radius: 12px;
-  max-width: 400px;
+  max-width: 500px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
   background-color: rgb(221, 43, 132);
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   transition: .3s;
   cursor: pointer;
+}
+.service__title {
+  margin-right: 40px;
 }
 .total {
   background-color: inherit;
