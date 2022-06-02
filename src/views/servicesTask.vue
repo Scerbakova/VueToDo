@@ -12,10 +12,10 @@
           counter();
         "
       >
-        <div>
+        <div class="service__title">
           {{ service.title }}
         </div>
-        <div>{{ service.currency }}{{ service.price }}</div>
+        <div>{{ service.currency }}{{ service.price.toFixed(2) }}</div>
       </div>
 
       <hr class="hr" />
@@ -34,38 +34,34 @@ export default defineComponent({
   name: "servicesTask",
   data: () => {
     return {
-      count: 0,
+      count: "0.00",
       services: [
         {
           id: 1,
           title: "Web Development",
           currency: "$",
-          // eslint-disable-next-line prettier/prettier
-          price: 300.00,
+          price: 300,
           isSelected: false,
         },
         {
           id: 2,
           title: "Design",
           currency: "$",
-          // eslint-disable-next-line prettier/prettier
-          price: 400.00,
+          price: 400,
           isSelected: false,
         },
         {
           id: 3,
           title: "Integration",
           currency: "$",
-          // eslint-disable-next-line prettier/prettier
-          price: 250.00,
+          price: 250,
           isSelected: false,
         },
         {
           id: 4,
           title: "Training",
           currency: "$",
-          // eslint-disable-next-line prettier/prettier
-          price: 220.00,
+          price: 220,
           isSelected: false,
         },
       ],
@@ -88,7 +84,7 @@ export default defineComponent({
         service.isSelected === true ? service.price : 0
       );
       console.log(
-        +(this.count = prices.reduce((a: number, b: number) => a + b))
+        (this.count = prices.reduce((a: number, b: number) => a + b).toFixed(2))
       );
     },
   },
