@@ -14,7 +14,9 @@
         <button class="btn" @click="addTask">ADD</button>
       </form>
     </div>
-    <div class="title" v-if="tasks.length < 1">No New Tasks Added Yet</div>
+    <div class="title subtitle" v-if="tasks.length < 1">
+      No New Tasks Added Yet
+    </div>
     <TransitionGroup name="list" tag="div">
       <div v-for="task in tasksFiltered" :key="task.id" class="todo-item">
         <div>

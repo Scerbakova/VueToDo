@@ -12,8 +12,6 @@
       @showInProgress="showInProgress"
       @showComplted="showCompleted"
     />
-    <div>{{ showInProgress().map((t) => t.todo) }}</div>
-    <div>{{ showCompleted().map((t) => t.todo) }}</div>
   </div>
 </template>
 
