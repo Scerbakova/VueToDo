@@ -14,56 +14,58 @@
         <button class="btn" @click="addTask">ADD</button>
       </form>
     </div>
-    <div v-if="tasks.length < 1">No New Tasks Added Yet</div>
-    <div v-for="task in tasksFiltered" :key="task.id" class="todo-item">
-      <div>
-        <div class="one__task">
-          <input
-            class="checkbox"
-            :checked="task.completed"
-            @change="isDoneToDo(task)"
-            type="checkbox"
-          />
-          <div
-            v-if="!task.editing"
-            @dblclick="editTask(task)"
-            class="todo-item-label"
-            :class="task.completed ? 'isdone' : 'notdone'"
-          >
-            {{ task.title }}
-          </div>
-          <div v-else>
+    <div class="title" v-if="tasks.length < 1">No New Tasks Added Yet</div>
+    <TransitionGroup name="list" tag="div">
+      <div v-for="task in tasksFiltered" :key="task.id" class="todo-item">
+        <div>
+          <div class="one__task">
             <input
-              class="todo-input"
-              type="text"
-              v-model="task.title"
-              @blur="doneEdit(task)"
-              @keyup.enter="doneEdit(task)"
-              @keyup.esc="cancelEdit(task)"
-              ref="editInput"
-              v-focusEdit
+              class="checkbox"
+              :checked="task.completed"
+              @change="isDoneToDo(task)"
+              type="checkbox"
             />
-            <button class="btn" @click="doneEdit(task)">Save</button>
-          </div>
-          <div>
-            <button
-              class="btn"
-              @click="editTask(task)"
-              v-if="task.title && !task.editing"
+            <div
+              v-if="!task.editing"
+              @dblclick="editTask(task)"
+              class="todo-item-label"
+              :class="task.completed ? 'isdone' : 'notdone'"
             >
-              Edit
-            </button>
-            <button
-              class="btn"
-              @click="deleteTask(task)"
-              v-if="task.title && !task.editing"
-            >
-              Delete
-            </button>
+              {{ task.title }}
+            </div>
+            <div v-else>
+              <input
+                class="todo-input"
+                type="text"
+                v-model="task.title"
+                @blur="doneEdit(task)"
+                @keyup.enter="doneEdit(task)"
+                @keyup.esc="cancelEdit(task)"
+                ref="editInput"
+                v-focusEdit
+              />
+              <button class="btn" @click="doneEdit(task)">Save</button>
+            </div>
+            <div>
+              <button
+                class="btn"
+                @click="editTask(task)"
+                v-if="task.title && !task.editing"
+              >
+                Edit
+              </button>
+              <button
+                class="btn"
+                @click="deleteTask(task)"
+                v-if="task.title && !task.editing"
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </TransitionGroup>
     <div class="filters">
       <button class="btn btn__all" @click="filter = 'All'">
         {{ filters[0] }}

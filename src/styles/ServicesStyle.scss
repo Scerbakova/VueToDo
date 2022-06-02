@@ -1,0 +1,37 @@
+.service__wrapper {
+  max-width: fit-content;
+  max-height: fit-content;
+  background-color: rgb(65, 65, 161);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 2px 2px 3px black;
+  border-radius: 12px;
+  text-align: center;
+}
+.hr {
+  background-color:rgb(245, 187, 29);
+  border: none;
+  width: 400px;
+  height: 4px;
+  box-shadow: 2px 2px 10px black;
+}
+.service, .total {
+  border-radius: 12px;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(221, 43, 132);
+  margin-bottom: 5px;
+  transition: .3s;
+  cursor: pointer;
+}
+.total {
+  background-color: inherit;
+  cursor: default;
+}
+.isselected {
+  background-color: rgb(131, 194, 155);
+  color: white;
+}

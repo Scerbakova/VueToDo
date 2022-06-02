@@ -1,26 +1,28 @@
 <template>
-  <div class="services">
-    <h1>Services</h1>
-    <div
-      class="service"
-      v-for="service in services"
-      :key="service.id"
-      :class="service.isSelected ? 'isselected' : 'notselected'"
-      @click="
-        select(service);
-        counter();
-      "
-    >
-      <div>
-        {{ service.title }}
+  <div class="service__wrapper">
+    <div class="services">
+      <h1 class="title">Services</h1>
+      <div
+        class="service"
+        v-for="service in services"
+        :key="service.id"
+        :class="service.isSelected ? 'isselected' : 'notselected'"
+        @click="
+          select(service);
+          counter();
+        "
+      >
+        <div>
+          {{ service.title }}
+        </div>
+        <div>{{ service.currency }}{{ service.price }}</div>
       </div>
-      <div>{{ service.currency }}{{ service.price }}</div>
-    </div>
 
-    <hr style="width: 420px" />
-    <div class="service">
-      <div>TOTAL</div>
-      <div>${{ count }}</div>
+      <hr class="hr" />
+      <div class="total">
+        <div>TOTAL</div>
+        <div>${{ count }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -94,17 +96,5 @@ export default defineComponent({
 </script>
 
 <style>
-.service {
-  margin: 0 auto;
-  max-width: 400px;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: rgb(238, 190, 214);
-  margin-bottom: 5px;
-}
-.isselected {
-  background-color: blue;
-  color: white;
-}
+@import "@/styles/ServicesStyle.scss";
 </style>
