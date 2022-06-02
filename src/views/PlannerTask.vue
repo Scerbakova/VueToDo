@@ -152,7 +152,7 @@ export default defineComponent({
       task.editing = true;
     },
     doneEdit(task: { title: string; editing: boolean }) {
-      if (task.title.trim() == "") {
+      if (task.title.trim() === "") {
         task.title = this.beforeEditCache;
       }
       task.editing = false;
