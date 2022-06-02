@@ -54,14 +54,14 @@
                 @click="editTask(task)"
                 v-if="task.title && !task.editing"
               >
-                Edit
+                <img class="image" src="../../public/edit.png" alt="edit" />
               </button>
               <button
                 class="btn"
                 @click="deleteTask(task)"
                 v-if="task.title && !task.editing"
               >
-                Delete
+                <img class="image" src="../../public/trash.png" alt="delete" />
               </button>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default defineComponent({
   },
   methods: {
     addTask() {
-      if (this.newTask.trim().length == 0) {
+      if (this.newTask.trim().length === 0) {
         return;
       }
       this.tasks.push({

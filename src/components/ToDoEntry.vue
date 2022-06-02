@@ -1,6 +1,6 @@
 <template>
   <div>
-    <li v-if="todo.isEditing === true">
+    <div v-if="todo.isEditing === true">
       <input
         :value="value"
         @input="$emit('inputValue', inputValue($event))"
@@ -8,7 +8,7 @@
         type="text"
       />
       <button>Save</button>
-    </li>
+    </div>
     <div>
       <input @change="$emit('isDoneToDo', todo)" type="checkbox" />
       <span :class="todo.isDone ? 'isdone' : 'notdone'">{{ todo.todo }}</span>
