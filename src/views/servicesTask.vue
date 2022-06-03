@@ -75,17 +75,17 @@ export default defineComponent({
       price: number;
       isSelected: boolean;
     }) {
-      this.services.map((s) =>
-        s.id === service.id ? (s.isSelected = !s.isSelected) : service
+      this.services.forEach((s) =>
+        s.id === service.id ? (s.isSelected = !s.isSelected) : s
       );
     },
     counter() {
       const prices = this.services.map((service) =>
         service.isSelected === true ? service.price : 0
       );
-      console.log(
-        (this.count = prices.reduce((a: number, b: number) => a + b).toFixed(2))
-      );
+      return (this.count = prices
+        .reduce((a: number, b: number) => a + b)
+        .toFixed(2));
     },
   },
 });
