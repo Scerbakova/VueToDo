@@ -9,7 +9,7 @@
       />
       <button>Save</button>
     </div>
-    <div>
+    <div class="todo__item">
       <input @change="$emit('isDoneToDo', todo)" type="checkbox" />
       <span :class="todo.isDone ? 'isdone' : 'notdone'">{{ todo.todo }}</span>
       <button @click="$emit('editToDo', todo)" v-if="todo.todo">Edit</button>
